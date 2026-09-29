@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0E2356">
+<meta name="description" content="Kostenloser Lerntrainer für die Grundausbildung im THW: Prüfungsbogen, Übungsmodus mit Fehlertraining, Praxisstationen und Werkzeug-Memory. Funktioniert auch offline.">
+<title>GA-Trainer · Grundausbildung</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="modulepreload" href="core.js">
+<link rel="modulepreload" href="tools.js">
+<link rel="preload" href="data.json" as="fetch" crossorigin>
+<script type="importmap">
+{ "imports": { "lit-html": "./vendor/lit-html/lit-html.js" } }
+</script>
+<script type="module" src="app.js" onerror="document.getElementById('app').innerHTML='&lt;p class=&quot;alert&quot;&gt;Die App konnte nicht geladen werden. Bitte die Seite neu laden.&lt;/p&gt;'"></script>
+</head>
+<body>
+<a class="skip" href="#app">Zum Inhalt springen</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#home">GA-Trainer <small>Grundausbildung</small></a>
+    <nav class="tabs" id="tabs" aria-label="Bereiche"></nav>
+  </div>
+  <div class="stripe" aria-hidden="true"></div>
+</header>
+<div id="update" class="update" role="status" hidden>
+  <span>Eine neue Version ist verfügbar.</span>
+  <button class="btn sm primary" id="update-reload" type="button">Jetzt aktualisieren</button>
+</div>
+<main id="app" tabindex="-1">
+  <p class="muted">Fragenkatalog wird geladen …</p>
+  <noscript><p>Der Trainer braucht JavaScript.</p></noscript>
+</main>
+<footer class="site-foot">
+  <nav aria-label="Rechtliches">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="lizenzen.html">Quellen und Lizenzen</a>
+  </nav>
+  <p>Inoffizielles Lernangebot, nicht vom THW herausgegeben.</p>
+</footer>
+<div id="status" class="visually-hidden" role="status"></div>
+<dialog id="confirm" aria-labelledby="confirm-title" aria-describedby="confirm-body">
+  <form method="dialog" class="stack gap-s">
+    <h2 id="confirm-title" class="h-s"></h2>
+    <p id="confirm-body" class="m-0"></p>
+    <div class="row">
+      <button class="btn" value="ok" id="confirm-ok"></button>
+      <button class="btn" value="cancel" autofocus>Abbrechen</button>
+    </div>
+  </form>
+</dialog>
+</body>
+</html>
